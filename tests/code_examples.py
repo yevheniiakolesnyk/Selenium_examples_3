@@ -31,7 +31,6 @@ submenu_items = driver_2.find_element(By.PARTIAL_LINK_TEXT, 'Jackets')
 action.move_to_element(submenu)
 action.click(submenu_items)
 action.perform()
-time.sleep(3)
 
 driver_3 = webdriver.Chrome()
 chrome_options = webdriver.ChromeOptions()
@@ -41,4 +40,3 @@ driver_3.get('http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-dro
 drag = WebDriverWait(driver_3, 20).until(EC.element_to_be_clickable((By.XPATH, '//div[starts-with(@id, "box") and text()="Rome"]')))
 drop = WebDriverWait(driver_3, 20).until(EC.element_to_be_clickable((By.XPATH, '//div[starts-with(@id, "box") and text()="Italy"]')))
 ActionChains(driver_3).drag_and_drop(drag, drop).perform()
-time.sleep(4)
