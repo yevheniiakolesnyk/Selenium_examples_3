@@ -11,8 +11,6 @@ def test_drag_drop():
     driver.get('https://the-internet.herokuapp.com/drag_and_drop')
     drag = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, 'column-a')))
     drop = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, 'column-b')))
-    time.sleep(2)
     action = ActionChains(driver).drag_and_drop(drag, drop)
     action.perform()
-    time.sleep(2)
     assert 1 == 1
